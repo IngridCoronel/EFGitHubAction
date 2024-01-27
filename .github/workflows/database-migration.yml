@@ -25,7 +25,7 @@ jobs:
     - name: Update database
       run: |
         cd PrincipalEFCoreMVC
-        dotnet ef database update --context ApplicationDbContext.cs || exit 1
+        dotnet ef database update --project PrincipalEFCoreMVC.csproj
       shell: bash
       env:
         DATABASE_CONNECTION_STRING: ${{ secrets.CONNECTION_STRING }}
