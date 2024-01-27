@@ -18,8 +18,11 @@ jobs:
       with:
         dotnet-version: '6.0.x'
 
-    - name: Restore Dependencies
-      run: dotnet restore
+    - name: Install EF Core CLI
+      run: dotnet tool install dotnet-ef --global
+      shell: bash
 
-    - name: Run Migrations
-      run: dotnet ef database update --project PrincipalEFCoreMVC.csproj
+    - name: Update database
+      run: |
+        cd PrincipalEFCoreMVC\Migrations
+        dotnet ef database update 20240126190908_Initial
