@@ -25,4 +25,4 @@ jobs:
     - name: Update database
       run: |
         cd PrincipalEFCoreMVC
-        dotnet ef database update --project PrincipalEFCoreMVC
+        dotnet ef database update --project PrincipalEFCoreMVC.csproj
