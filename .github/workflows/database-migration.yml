@@ -1,0 +1,25 @@
+name: Database Migration
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  migrate-database:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v5
+      with:
+        dotnet-version: '6.0.x'
+
+    - name: Restore Dependencies
+      run: dotnet restore
+
+    - name: Run Migrations
+      run: dotnet ef database update --project PrincipalEFCoreMVC\PrincipalEFCoreMVC.csproj
