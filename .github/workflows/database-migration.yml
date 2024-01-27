@@ -19,12 +19,7 @@ jobs:
         dotnet-version: '6.0.x'
 
     - name: Restore Dependencies
-      run: dotnet restore PrincipalEFCoreMVC/PrincipalEFCoreMVC.csproj
-
-    - name: Build
-      run: dotnet build PrincipalEFCoreMVC/PrincipalEFCoreMVC.csproj --configuration Release
+      run: dotnet restore
 
     - name: Run Migrations
-      run: dotnet ef database update --project PrincipalEFCoreMVC/PrincipalEFCoreMVC.csproj --configuration Release
-      env:
-        ASPNETCORE_ENVIRONMENT: Production      
+      run: dotnet ef database update --project PrincipalEFCoreMVC.csproj
