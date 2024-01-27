@@ -24,5 +24,5 @@ jobs:
 
     - name: Update database
       run: |
-        cd PrincipalEFCoreMVC\Migrations
+        cd PrincipalEFCoreMVC/Migrations
         dotnet ef database update 20240126190908_Initial
