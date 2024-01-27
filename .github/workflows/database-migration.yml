@@ -19,7 +19,7 @@ jobs:
         dotnet-version: '6.0.x'
 
     - name: Install EF Core CLI
-      run: dotnet tool install dotnet-ef --global
+      run: dotnet tool install --global dotnet-ef --version 6.0.26
       shell: bash
 
     - name: Update database
